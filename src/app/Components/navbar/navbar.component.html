@@ -1,0 +1,108 @@
+<header>
+  <div class="wrapper">
+    <div class="logo"><a [routerLink]="['/']" routerLinkActive="router-link-active"><img
+          src="../../../assets/Block-Industrial-San-Pedro.ico" height="60px" alt=""></a></div>
+    <input class="slider" type="radio" name="slider" id="menu-btn">
+    <input class="slider" type="radio" name="slider" id="close-btn">
+    <a [routerLink]="['/carrito']" *ngIf="isloggedIn" class="mobile-drop1" style="text-decoration: none;">
+      <i class="bigg fas fa-shopping-bag" aria-hidden="true"></i> {{cart.length}}</a> 
+  
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+     
+
+      <li><a routerLink="/bienvenido" routerLinkActive="router-link-active">Home</a></li>
+      <!--
+      <li>
+        <a routerLink="/productos" routerLinkActive="router-link-active" class="desktop-item">Productos</a>
+        <input class="slider" type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">Productos</label>
+        <ul class="drop-menu">
+          <li><a [routerLink]="['/tarjetas']" routerLinkActive="router-link-active">Nada</a></li>
+          <li><a [routerLink]="['/contactos']" routerLinkActive="router-link-active">Nada</a></li>
+          <li><a [routerLink]="['/contactanos']" routerLinkActive="router-link-active">Nada</a></li>
+          <li><a [routerLink]="['/routePath']" routerLinkActive="router-link-active">Nada</a></li>
+        </ul>
+      </li>
+-->
+      <li>
+        <a routerLink="/departamento" routerLinkActive="router-link-active" class="desktop-item">Depatamento</a>
+        <input class="slider" type="checkbox" id="showMega">
+        <label for="showMega" routerLink="/departamento" routerLinkActive="router-link-active"
+          class="mobile-item">Depatamento<i class="fas fa-caret-down" aria-hidden="true"></i></label>
+        <div class="mega-box">
+          <div class="content">
+            <div class="row">
+
+              <img src="../../../assets/larocafoto.JPG" alt="">
+
+            </div>
+            <div class="row">
+              <header>Comprar</header>
+              <ul class="mega-links">
+                <li><a [routerLink]="['/departamento']" routerLinkActive="router-link-active">Departamento</a></li>
+                <li><a [routerLink]="['/oferta']" routerLinkActive="router-link-active">Productos en Oferta</a></li>
+                <li><a [routerLink]="['/routePath']" routerLinkActive="router-link-active"></a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>MAS....</header>
+              <ul class="mega-links">
+                <li><a href="https://www.google.com/maps/place/Industrial+San+Pedro/@18.4615625,-69.2835625,17z/data=!4m13!1m7!3m6!1s0x0:0x0!2s77CGFP68%2BJH!3b1!8m2!3d18.4615625!4d-69.2835625!3m4!1s0x8eaf5e1f1e941eb3:0xf35f963ff2ebf844!8m2!3d18.461531!4d-69.2837026"
+                  target="_blank">Nuestra Direccion</a></li>
+                <li><a [routerLink]="['/contactanos']" routerLinkActive="router-link-active">Enviar un mensaje</a></li>
+                <li><a [routerLink]="['/nosotros']" routerLinkActive="router-link-active">Sobre Nosotros</a></li>
+              </ul>
+            </div>
+          
+          </div>
+        </div>
+      </li>
+
+
+
+      <li *ngIf="isloggedIn"><a [routerLink]="['/carrito']" routerLinkActive="router-link-active" class="mobile-drop">
+        Bolso <i class="bigg fas fa-shopping-bag" aria-hidden="true"></i> {{cart.length}}</a></li>
+
+        
+
+      <ul class="log-sign">
+
+        <li *ngIf="!isloggedIn"><a [routerLink]="['/login']" class="btn1 transparent">Log In</a></li>
+        <li *ngIf="!isloggedIn"><a [routerLink]="['/registro']" class="btn1 solid" style="color: #69bde7;">Sign Up</a>
+        </li>
+
+
+        <li *ngIf="isloggedIn">
+          <div class="dropdown">
+            <a class="dropbtn desktop-item"> {{usernombre}} <i class="fas fa-caret-down" aria-hidden="true"></i></a>
+
+            <input class="slider" type="checkbox" id="showDrops">
+            <label for="showDrops" class="mobile-drop">{{usernombre}} <i class="fas fa-caret-down"
+                aria-hidden="true"></i></label>
+            <div class="dropdown-content">
+
+        <li *ngIf="isloggedIn"><a [routerLink]="['/infoperfil']" routerLinkActive="router-link-active">Perfil</a></li>
+
+            <li><a [routerLink]="['/ventas']" >{{user}}</a></li>
+            
+        <li *ngIf="isloggedIn" class="nav-item">
+          <a style="cursor: pointer" (click)="logout()" class="nav-link">Salir</a>
+        </li>
+
+  </div>
+  </div>
+  </li>
+  </ul>
+
+  <li><a [routerLink]="['/carrito']" routerLinkActive="router-link-active"
+      class="desktop-item"><i class="bigg fas fa-shopping-bag" aria-hidden="true"></i>
+      {{cart.length}}</a></li>
+
+
+  </ul>
+
+  <label for="menu-btn" class="btn btn-menu"><i class="fas fa-bars" aria-hidden="true"></i></label>
+
+  </div>
+</header>

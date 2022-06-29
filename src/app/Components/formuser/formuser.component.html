@@ -1,0 +1,81 @@
+
+
+<section class="contact-box">
+  <div class="row no-gutters bg-dark">
+      <div class="col-xl-5 col-lg-12 register-bg">
+       <div class="position-absolute testiomonial p-4">
+           <h3 class="font-weight-bold text-light"></h3>
+           <p class="lead text-light"></p>
+       </div>
+      </div>
+      <div class="col-xl-7 col-lg-12 d-flex">
+           <div class="container align-self-center p-6">
+               <h1 class="font-weight-bold mb-3 text1">Ingrese sus Datos</h1>
+               
+               <p class="text-muted mb-5 text1">Todos los datos son necesarios</p>
+
+               <form class="mover" [formGroup]="crearCliente" (ngSubmit)="clienteInfo()">
+                <div class="form-row mb-2">
+                  <div class="form-group col-md-6">
+       <!--             <label class="font-weight-bold text1">ID<span class="text-danger">*</span></label>-->
+              
+                    <input type="hidden" class="form-control" name="uid" [(ngModel)]="uidUser" formControlName="uid" placeholder="ID">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="font-weight-bold text1">Nombre <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="nombre" placeholder="Tu nombre">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="font-weight-bold text1">Apellido <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" formControlName="apellido" placeholder="Tu apellido">
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <label class="font-weight-bold text1" style="display: none;">Correo electrónico <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" style="display: none;" formControlName="email" [(ngModel)]="loggedInUser"
+                    placeholder="Ingresa tu correo electrónico">
+                </div>
+                <div class="form-group mb-3">
+                  <label class="font-weight-bold text1">Telefono <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" formControlName="telefono"
+                    placeholder="Ingresa su telefono/celular">
+                </div>
+                <div class="form-group mb-3">
+                  <label class="font-weight-bold text1">Direccion <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" formControlName="direccion" placeholder="Ingresa una direccion">
+                </div>
+    
+                <input type="submit" class="btn btn-primary width-100" value="Enviar">
+              </form>
+              
+           </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

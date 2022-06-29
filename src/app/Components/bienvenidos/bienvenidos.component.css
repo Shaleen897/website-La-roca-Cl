@@ -1,0 +1,241 @@
+/*
+.c-img{
+  position: relative;
+  display: flex;
+}*/
+
+.imgedit{
+  width: 100%;
+  height: calc(100vh - 300px);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+
+}
+@media screen and (max-width: 900px){
+  .imgedit{
+    width: 100%;
+    height: calc(100vh - 299px);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-size: cover;
+  
+  }
+}
+/*
+.txt{
+  text-align: center;
+  position: absolute;
+  font-weight: bold;
+  margin: 100px;
+  width: 50%;
+  color: rgb(255, 255, 255);
+}*/
+
+.colorBP{
+  width: 70%;
+  color: black;
+}
+ 
+h4,.control p, .control3 h1{
+  padding: 10px 20px;
+}
+
+p{
+  margin: 10px;
+  font-size: 20px;
+  text-align: justify;
+}
+.control{
+  width: 100%;
+  margin: auto;
+  background-color: rgba(221, 214, 214, 0.733);
+  padding: 10px;
+}
+
+
+
+
+.control3{
+  width: 100;
+  margin: auto;
+  color: black;
+  padding: 20px;
+  background-color: #ff6600ec;
+}
+
+.control3 .card .card-body img{
+  margin-right: 50px;
+  margin-top: 40px;
+}
+
+
+.control .margen{
+  margin: 20px 0px 0px 30px;
+  color: #ff6600ec;
+}
+
+.control .margen strong{
+  font-size: 41px;
+}
+.control  p{
+  color: black;
+  width: 70%;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+
+
+
+
+
+
+/* product collection */
+
+
+
+.lg-title,
+.md-title,
+.sm-title{
+    font-family: 'Roboto', sans-serif;
+    padding: 0.6rem 0;
+    text-transform: capitalize;
+}
+.lg-title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 1.3rem 0;
+    opacity: 0.9;
+}
+.md-title{
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+.sm-title{
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.text-ligh{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    opacity: 0.8;
+    margin-left: auto;
+
+}
+
+
+.product-collection{
+  padding: 3.2rem 0;
+  overflow: hidden;
+}
+.product-collection-wrapper{
+  padding: 3.2rem 0;
+}
+.product-col-left{
+  background: url("../../../assets/larocafoto.JPG") center/cover no-repeat;
+}
+.product-col-r-top{
+  background: url("../../../assets/cemetos-titanp.jpeg") center/cover no-repeat;
+  color: black;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 50vh;
+  padding: 2rem 1.5rem 3.2rem;
+  margin: 5px;
+}
+.product-col-r-bottom > div:first-child{
+  background: #eaa001;
+}
+.product-col-r-bottom > div:last-child{
+  background: #0090ff;
+}
+.product-col-content{
+  text-align: center;
+  color: white;
+}
+.product-collection .text-light{
+  opacity: 1;
+  font-size: 0.8;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.btn-dark{
+  background: black;
+  color: white;
+  outline: 0;
+  border-radius: 25px;
+  padding: 0.7rem 1rem;
+  border: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  font-size: 1rem;
+  font-family: inherit;
+}
+.btn-dark:hover{
+  background: transparent;
+}
+
+
+/* Media Queries */
+@media screen and (min-width: 992px){
+
+  .product-col-r-bottom{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1200px){
+ 
+
+}
+
+@media screen and (min-width: 1336px){
+ 
+  .product-collection-wrapper{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+  .flex{
+      height: 60vh;
+  }
+  .product-col-left{
+      height: 121.5vh;
+  }
+}
+
+

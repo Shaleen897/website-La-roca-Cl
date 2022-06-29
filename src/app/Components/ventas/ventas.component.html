@@ -1,0 +1,133 @@
+<div class="mb">
+  <header id="main-header" class="py-2 bgo text-white animated fadeIn fast">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>
+            {{user}}
+            
+          <div class="btn-group" style="float: right;">
+            <button type="button" class="btn btn-dark" (click)="preOrdenesUser()">Pre-Ordenes</button>
+            <button type="button" class="btn btn-success" (click)="onlineOrdenesUser()">Ordenes de Pago en linea</button>
+            </div>
+          </h1>
+          <div *ngIf="POnline == true">
+            <h4> Cantidad de pre-Ordenes: {{pedido.length}}  <small *ngIf="pedido.length != 0" style="float: right;"> Nuestro personal se pondra en contacto con usted pronto</small></h4>
+          </div>
+          <div *ngIf="POnline == false">
+            <h4> Cantidad de ordenes de pago online: {{pedido.length}}  <small *ngIf="pedido.length != 0" style="float: right;"> Nuestro personal se pondra en contacto con usted pronto</small></h4>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!--Pre-Orden-->
+
+  <div class="container mt-4 animated fadeIn fast" *ngIf="loggedInUser && POnline == true">
+    <div class="user">
+      <div class="body">
+
+        <h5 class="baj" style="margin: 130px 0px 180px 0px;" *ngIf="pedido.length == 0">Aun no tiene una pre-orden para mostrar</h5>
+
+        <table class="table1 table-hover" style="margin: auto;" *ngFor="let ordeness of pedido">
+          <thead class="">
+            <th></th>
+            <th>Orden: {{ordeness.ordenNum}}</th> <th>Fecha: {{ordeness.fecha.toDate() | date:'dd/MM/yyyy'}}</th>
+            <th></th>
+            <th></th>
+            <tr>
+              <th></th>
+              <th>Codigo</th>
+              <th>Nombre Producto</th>
+              <th>Cantidad</th>
+              <th>Sub-Total</th>
+              
+            </tr>
+          </thead>
+
+          <tbody>
+            
+            <tr class="text" *ngFor="let ordenes of ordeness.orden">
+              <td></td>
+              <td>{{ordenes.producto.codigo}}</td>
+              <td>{{ordenes.producto.producto}}</td>
+              <td>{{ordenes.cantidad}}</td>
+              <td>{{ordenes.subTotal |currency}}</td>
+            </tr>
+            <div class="linea"></div>
+            <h5>Total: RD{{ordeness.total|currency}}</h5>
+            <a [routerLink]="['/payment/',ordeness.id]" class="btn btn-success">Pagar Online</a>
+          </tbody>
+          <br><br>
+        </table>
+  
+        
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--Ordenes Online-->
+
+  <div class="container mt-4 animated fadeIn fast" *ngIf="loggedInUser && POnline == false">
+    <div class="user">
+      <div class="body">
+
+        <h5 class="baj" style="margin: 130px 0px 180px 0px;" *ngIf="pedido.length == 0">Aun no tiene una orden de pago en linea para mostrar</h5>
+
+        <table class="table1 table-hover" style="margin: auto;" *ngFor="let infoPago of pagosOnline">
+          <thead class="table">
+            <th></th> 
+            
+            <tr>
+              <th></th>
+              <th>Nombre</th>
+              <th>Codigo pre-Orden</th>
+              <th>Pago Total</th>
+              <th>Direccion</th>
+              <th>Email</th>
+              <th>Fecha</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr class="text" >
+
+              <td></td>
+              <td style="color: black;">{{infoPago.namecard}}</td>
+              
+              <td style="color: black;">{{infoPago.orden.ordenNum}}</td>
+              
+              <td style="color: black;">RD{{infoPago.orden.total|currency}}</td>
+
+              <td style="color: black;">{{infoPago.direccion}}</td>
+
+              <td style="color: black;">{{infoPago.email}}</td>
+
+              <td style="color: black;"> {{infoPago.fechaCreacion.toDate() | date:'dd/MM/yyyy'}}</td>
+          
+            </tr>
+
+           <!--X <a [routerLink]="['/modal/',ordenes.id]"
+             type="button" class="btn btn-primary">
+             Full Info...
+            </a>-->
+
+          </tbody>
+          <br><br>
+        </table>
+  
+        
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,65 @@
+
+
+
+
+
+<div class="bg-img animated fadeIn fast">
+  <div class="content">
+    <header>Registrate <br> Ingresa tus datos </header>
+    <!--
+[formGroup]="crearCliente"
+formControlName="email"
+formControlName="contraseña"
+    -->
+    <form action="#"   (ngSubmit)="registraryagregarperfil()">
+      <div class="field">
+        <span class="fa fa-user"></span>
+        <input type="email" required placeholder="Email" name="email" [(ngModel)]="email" >
+      </div>
+<div class="field space">
+        <span class="fa fa-lock"></span>
+        <input type="password" class="pass-key" required placeholder="Password" name="password" [(ngModel)]="password" >
+        <span class="show">SHOW</span>
+      </div>
+<div class="pass">
+        <a href="#"></a>
+      </div>
+<!--
+      <div class="field space">
+        <input type="text" name="nombre" required formControlName="nombre" placeholder="Nombre">
+      </div>
+
+      <div class="field space">
+        <input type="text" name="apellido" required formControlName="apellido" placeholder="Apellido">
+      </div>
+
+      <div class="field space">
+        <input type="number" class="pass-key" formControlName="telefono" required placeholder="Telefono/Celular" name="telefono">
+      </div>
+
+      <div class="field space">
+        <input type="text" name="direccion" formControlName="direccion"
+         placeholder="Direccion">
+      </div>
+-->
+
+<div class="field space">
+        <input type="submit" value="Entrar" style="cursor: pointer;">
+      </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<div class="container fo animated fadeIn fast">
+
+  <div  class="texcar">
+    <h1>Detalles del Producto</h1>
+  </div>
+      <div class="cart1">
+        <div class="products">
+  
+          <div class="product">
+  
+            <img src="{{producto.img}}">
+  
+            <div class="product-info">
+
+              <h4 class="product-name" name="producto">{{producto.producto}}</h4>
+              <hr>
+              <h6 class="product-depart" name="departamento"><strong>Departamento: </strong> {{producto.departamento}}</h6>
+              <br>
+              <h6 class="product-depart" name="departamento"><strong>Codigo: </strong> {{producto.codigo}}</h6>
+              <br>
+              <h6 class="product-price" name="precio"><strong> Precio: </strong>{{producto.precio |currency}}</h6>
+  
+              <h6 class="product-offer" name="descuento" *ngIf="producto.descuento != 0">Descuento: {{carrito.descuento|percent}}</h6>
+
+              <h6 class="product-depart" name="departamento"><strong>En Almacen: </strong> {{producto.existencia}}</h6>
+              <br>
+              <p class="product-quantity"><strong>Descripcion:</strong> {{producto.descripcion}}</p>
+               
+         </div>
+       </div>
+          
+    </div>
+   </div>
+
+
+</div>

@@ -1,0 +1,30 @@
+
+
+<div class="bg-img animated fadeIn fast">
+  <div class="content">
+    <header>Contactanos</header>
+    <form action="#" [formGroup]="crearContacto" (ngSubmit)="agregarContacto()">
+     
+      <div class="field nombre space">
+        <input type="text" name="nombre" required formControlName="nombre" placeholder="Nombre">
+      </div>
+     
+      <div class="field space">
+        <input type="email" required formControlName="email" placeholder="Email" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+      </div>
+      <div class="field space">
+        <input type="number" class="pass-key" formControlName="telefono" required placeholder="Telefono/Celular" name="telefono">
+      </div>
+
+      <div class="field space">
+        <textarea type="text" name="mensaje" formControlName="mensaje"
+         placeholder="Mensaje"></textarea>
+      </div>
+
+<div class="field space">
+        <input [disabled]="btnDisabled" type="submit" value="Enviar" style="cursor: pointer;">
+      </div>
+    </form>
+
+</div>
+</div>

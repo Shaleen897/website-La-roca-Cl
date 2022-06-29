@@ -1,0 +1,52 @@
+
+<app-formuser *ngIf="clientes.length == 0"></app-formuser>
+
+<div *ngFor="let cliente of clientes">
+  <!--*ngIf="cliente.email ===  loggedInUser && !isloggedInAdm"-->
+    <div class="wrapper">
+    <div class="left">
+      <img src="../../../assets/user-image.png" alt="user" width="100">
+      <h4>{{cliente.nombre}}</h4>
+      <p>{{cliente.apellido}}</p>
+      
+    </div>
+    <div class="right">
+      <div class="info">
+        <h3>Informacion</h3>
+       
+        <div class="info_data">
+
+          <div class="data">
+            <h4>ID</h4>
+            <p>{{cliente.uid}}</p>
+          </div>
+
+          <div class="data">
+            <h4>Email</h4>
+            <p>{{cliente.email}}</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="projects">
+        <h3></h3>
+        <div class="projects_data">
+          <div class="data">
+            <h4>Direccion</h4>
+            <p>{{cliente.direccion}}.</p>
+          </div>
+
+          <div class="data">
+            <h4>Telefono / Celular </h4>
+            <p>{{cliente.telefono}}</p>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+

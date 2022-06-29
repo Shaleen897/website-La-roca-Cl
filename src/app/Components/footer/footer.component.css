@@ -1,0 +1,249 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  color: #d9d9d9;
+  box-sizing: border-box;
+}
+.content1{
+ position: fixed;
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.content1 .text{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #202020;
+}
+.content1 .p{
+  font-size: 2.1875rem;
+  font-weight: 600;
+  color: #202020;
+}
+footer{
+ /* position: fixed;*/
+  bottom: 0px;
+  width: 100%;
+  background: #111;
+  overflow: hidden;
+}
+.main-content{
+  display: flex;
+  /*margin-top: 50px;*/
+  
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background: #ff6600ec;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 50px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.space{
+  margin-left: 10px;
+}
+
+.left .content .social a span:hover{
+  background: #FF0000;
+}
+
+.left .content .social a .blue:hover{
+  background: linear-gradient(-45deg,#4267B2, #006AFF);
+}
+
+.left .content .social a .insta:hover{
+  background: linear-gradient(-8deg,#405DE6,#5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, 	#FFDC80)
+
+}
+
+.left .content .social a .green:hover{
+  background: #30c037d8;
+}
+
+.left .content .social a .black:hover{
+  background: #000000d8;
+}
+
+@media screen and (max-width: 600px) {
+  
+.left .content .social a span{
+  background: #FF0000;
+}
+
+.left .content .social a .blue{
+  background: linear-gradient(-45deg,#4267B2, #006AFF);
+}
+
+.left .content .social a .insta{
+  background: linear-gradient(-8deg,#405DE6,#5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, 	#FFDC80)
+
+}
+
+.left .content .social a .black{
+  background: #000000d8;
+}
+
+.left .content .social a .green{
+  background: #30c037d8;
+}
+}
+
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #ff6600ec;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+
+
+
+
+/*telefonos*/
+a {
+  text-decoration: none;
+}
+.ml{
+  margin-left: 45px;
+}
+/*/////////////////*/
+
+
+
+
+.bottom .center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+  text-align: center;
+}
+.bottom .center span{
+  color: #656565;
+}
+.bottom .center a{
+  color: #ff6600ec;
+  text-decoration: none;
+}
+.bottom .center a:hover{
+  text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+  footer{
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
+
+
+
+
+/*formulario de contacto*/
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn1{
+  margin-top: 10px;
+}
+.right form .btn1 button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #ff6600ec;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn1 button:hover{
+  background: #000;
+}
+
+.texto{
+  margin-left: 59px;
+}
+
+

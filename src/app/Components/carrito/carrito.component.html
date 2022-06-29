@@ -1,0 +1,75 @@
+
+
+
+<div class="container fo animated fadeIn fast">
+
+  <div class="cart">
+
+  <div  class="texcar">
+    <h1>Carrito de Compras</h1>
+  </div>
+
+  <h5 class="animated fadeIn fast" style="margin: 30px;" *ngIf="!loggedInUser">
+    Si contiene un producto en el carrito inicie secion para verlo. 
+  </h5>
+
+  <h5 class="animated fadeIn fast" style="margin: 0px 0px 250px 40px; text-align: center;" *ngIf="cart.length == 0" >
+    Su carrito esta vacio 
+  </h5>
+
+    <div class="cart1" *ngFor="let carrito of cart; index as i">
+      <div class="products" *ngIf="loggedInUser == carrito.email">
+
+        <div class="product">
+
+          <img src="{{carrito.producto.img}}">
+
+          <div class="product-info">
+
+            <h6 class="product-depart" name="departamento">Codigo: {{carrito.producto.codigo}}</h6>
+
+            <h5 class="product-name" name="producto">{{carrito.producto.producto}}</h5>
+
+            <h6 class="product-price" name="precio">{{carrito.producto.precio |currency}}</h6>
+
+            <h6 class="product-offer" name="descuento" *ngIf="carrito.producto.descuento > 0">Descuento: {{carrito.descuento|percent}}</h6>
+
+            <p class="product-quantity">cantidad: {{carrito.cantidad}} <!--<input type="number" value="1" [(ngModel)]="carrito.cantidad"
+              class="form-control" name="cantidad">--></p>
+              <br>
+            <h6 class="product-price" name="precio">SubTotal: {{carrito.subTotal |currency}}</h6>  
+
+              <button type="button" class="product-remove btn" (click)="deletecart(carrito.id)">
+               <span class="remove">Eliminar</span>  </button>
+
+          
+          <button *ngIf="!isloggedInAdm && add !== i && carrito.length > 0" (click)="addPedido(i)" type="button" class="product-remove1 btn">Tomar orden
+
+          </button>
+          <div *ngIf="add === i">
+            <input type="hidden" class="form-control" placeholder="Cantidad" name="cantidad" #cantidad
+              [(ngModel)]="carrito.cantidad">
+            <button (click)="enviarPedido(cantidad.value)" *ngIf="!isloggedInAdm" type="button" class="product-remove1 btn">Ordenar</button>
+       </div>
+     </div>
+        
+  </div>
+ </div>
+
+  
+  </div>
+
+</div>
+
+
+
+<div class="cart-total" *ngIf="loggedInUser && !isloggedInAdm">
+
+  <div class="totales" *ngIf="cart.length != 0">
+   
+      <h1>Total: RD{{suma|currency}}</h1>
+    
+    <a style="cursor: pointer;" (click)="sendPedido()">Enviar Pedido</a>
+
+  </div>
+</div>

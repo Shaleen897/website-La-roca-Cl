@@ -1,0 +1,85 @@
+.mb{
+    margin-bottom: 100px;
+}
+
+.baj{
+  text-align: center;
+  font-size: 40px;
+}
+
+
+  table{
+    font-family: sans-serif;
+    border-collapse: collapse;
+  }
+  
+  th{
+    background-color: #333;
+    color: #fff;
+  }
+  
+  th, td{
+    padding: .8rem;
+    font-size: 1.4rem;
+  }
+  
+  tbody{
+    background-color: #eee;
+    color: #555;
+  }
+  
+  @media screen and (min-width: 600px){
+    th:first-of-type{
+        display: none;
+      }
+      td:first-of-type{
+        display: none;
+      }
+
+  }
+  
+  @media screen and (max-width: 600px){
+    thead{
+      display: none;
+    }
+  
+    td{
+      display: block;
+    }
+  
+    
+    th:first-of-type{
+        background-color: #333;
+       
+        text-align: center;
+      }
+    
+    td:nth-child(2)::before{
+      content: "Codigo";
+    }
+  
+    td:nth-child(3)::before{
+      content: "Producto";
+    }
+  
+    td:nth-child(4)::before{
+      content: "Cantidad";
+    }
+  
+    td:nth-child(5)::before{
+      content: "SubTotal";
+    }
+    td:nth-child(6)::before{
+        content: "Estado";
+      }
+  
+    td{
+      text-align: right;
+    }
+  
+    td::before{
+      float: left;
+      margin-right: 3rem;
+      font-weight: bold;
+    }
+  }

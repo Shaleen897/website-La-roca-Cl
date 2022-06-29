@@ -1,0 +1,92 @@
+
+<!--
+<header id="main-header" class="py-2 bgo text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>
+          <i class="fas fa-user"></i> Login
+        </h1>
+      </div>
+    </div>
+  </div>
+</header>
+-->
+  
+  
+
+
+<!--
+<section class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+   
+          <div class="card-body">
+            <form (ngSubmit)="login()">
+              <div class="form-group">
+                <Label for="email"><strong> Email </strong></Label>
+                <input class="form-control" type="email" name="email" [(ngModel)]="email" required
+                  size="20">
+                </div>
+                <div class="form-group">
+                  <Label for="password"><strong> Password </strong></Label>
+                <input class="form-control" type="password" name="password" [(ngModel)]="password"
+                  required size="15">
+                </div>
+                <div class="btn1">
+              <button type="submit" style="cursor: pointer;" class="btn">Entrar</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+
+<div class="bg-img animated fadeIn fast">
+  <div class="content">
+    <header>Ingresa tu cuenta</header>
+    <form action="#" (ngSubmit)="login()">
+      <div class="field">
+        <span class="fa fa-user"></span>
+        <input type="email" required placeholder="Email" name="email" [(ngModel)]="email">
+      </div>
+<div class="field space">
+        <span class="fa fa-lock"></span>
+        <input type="password" class="pass-key" required placeholder="Password" name="password" [(ngModel)]="password">
+        <span class="show">SHOW</span>
+      </div>
+<div class="pass">
+        <a href="#">Forgot Password?</a>
+      </div>
+<div class="field">
+        <input type="submit" value="Entrar" style="cursor: pointer;">
+      </div>
+</form>
+<!--
+<div class="login">
+Or login with</div>
+<div class="links">
+      <div class="facebook">
+        <i class="fab fa-facebook-f"><span>Facebook</span></i>
+      </div>
+<div class="instagram">
+        <i class="fab fa-instagram"><span>Instagram</span></i>
+      </div>
+</div>
+
+-->
+<div class="signup">
+Don't have account?
+      <a routerLink="/registro">Sign Up Now</a>
+    </div>
+
+</div>
+</div>
+
+

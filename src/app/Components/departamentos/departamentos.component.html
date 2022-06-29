@@ -1,0 +1,155 @@
+<div class="footspace animated fadeIn fast">
+  <div class="container">
+    <h1 class="lg-title">Productos del departamento</h1>
+    <p class="text-ligh">Bienvenidos a nuestros departamentos industriales y ferreteros contamos con una gran cantidad
+      de articulos de calidad en San Pedro de Macoris y provincias vecinas.</p>
+
+    <hr style="color: black; width: 100%;">
+
+
+    <div class="buscarPD">
+
+      <div>
+        <h6>Precio RD$</h6>
+
+        <select class="selec" [(ngModel)]="operador" name="operador">
+          <option value="" selected disabled hidden>Opcion de Precio</option>
+          <option value=">"> Mayor</option>
+          <option value="==">Igual</option>
+          <option value="<"> Menor</option>
+        </select>
+
+      </div>
+
+      <div>
+
+        <input class="largo form-control" type="number" name="precio" [(ngModel)]="precio" (input)="buscarPrecio()"
+          placeholder="Coloque un precio">
+      </div>
+
+
+      <div>
+        <input type="text" class="largo form-control" name="nombreDepart" [(ngModel)]="nombre" (input)="buscar()"
+          placeholder="Buscar Producto">
+
+      </div>
+
+    </div>
+    <br><br>
+
+    <hr style="color: black; width: 100%;">
+
+
+    <div class="menu-left">
+
+      <div class="text-head2">
+        <h5>Lista de Departamentos</h5>
+      </div>
+
+      <div class="text-body">
+
+
+        <ul>
+          <li><a class="apuntar" (click)="depAutomotriz()">Automotriz</a></li>
+          <li><a class=" apuntar" (click)="depConstruccion()">Materiales de construcción</a></li>
+          <li><a class="apuntar" (click)="depHerramientas()">Herramientas</a></li>
+          <li><a class="apuntar" (click)="depMaquinarias()">Maquinarias</a></li>
+          <li><a class="apuntar" (click)="depPinturas()">Pinturas</a></li>
+          <li><a class="apuntar" (click)="depPlomeria()">Plomería</a></li>
+          <li><a class="apuntar" (click)="depCerrajeria()">Cerrajería</a></li>
+          <li><a class="apuntar" (click)="depElectricidad()">Electricidad</a></li>
+        </ul>
+        <!--
+        <ul class="mt-3">
+          <div class="text-head2">
+            <h5>Marcas</h5>
+          </div>
+          <li><a href="#">Truper</a></li>
+          <li><a href="#">Pretul</a></li>
+          <li><a href="#">Foset</a></li>
+          <li><a href="#">Cano</a></li>
+          <li><a href="#">Lanco</a></li>
+          <li><a href="#">Construrama</a></li>
+          <li><a href="#">Importado</a></li>
+        </ul>
+
+        <ul class="mt-3">
+          <div class="text-head2">
+            <h5>Material</h5>
+          </div>
+          <li><a href="#">CPVC</a></li>
+          <li><a href="#">PVC</a></li>
+
+        </ul>
+-->
+
+      </div>
+    </div>
+
+
+
+    <div class="product-items" infinite-scroll [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"  (scrolled)="onScrollDown()">
+
+      <!-- single product -->
+
+      <div *ngFor="let producto of productos; index as i">
+        <div class="product">
+
+          <div class="product-content">
+            <div class="product-img">
+              <img src="{{producto.img}}" alt="product image">
+            </div>
+          </div>
+
+          <div class="product-info">
+
+            <h2 class="sm-title depart">codigo: {{producto.codigo}}</h2>
+
+            <div class="product-info-top">
+
+              <div class="productname">
+                <p class="product-name">{{producto.producto}}</p>
+              </div>
+              <small class="cantidad bg-success" *ngIf="producto.existencia > 0 ">{{disponible}}</small>
+              <small class="cantidad  bg-danger" *ngIf="producto.existencia < 0 ">{{noDisponible}}</small>
+            </div>
+
+            <p class="product-price">{{producto.precio | currency}}</p>
+            <p class="product-price" *ngIf="producto.descuento > 0">
+              {{producto.precio  * producto.descuento - producto.precio  | currency}}</p>
+
+
+            <div class="product-btns">
+              <a *ngIf="!isloggedInAdm && add !== i" [routerLink]="['/detalle/',producto.id]" type="button"
+                class="btn1 btn">
+                Leer Mas
+              </a>
+              <button *ngIf="!isloggedInAdm && add !== i" (click)="addToCart(i)" type="button" class="btn1 btn">Añadir
+                <span><i class="fas fa-plus"></i></span>
+              </button>
+              <div *ngIf="add === i">
+                <input type="number" class="form-control" placeholder="Cantidad" #cantidad>
+                <a (click)="buy(cantidad.value)" *ngIf="!isloggedInAdm" type="button" class="btn1 btn">Carrito
+                  <span><i class="fas fa-shopping-cart"></i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div *ngIf="producto.descuento > 0" class="off-info">
+            <h2 class="sm-title"> {{producto.descuento * 100}}% off</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div  style=" width: 100px; height: 100px; margin-left: 50%;" *ngIf="scroll == true" class="spinner-grow text-primary" role="status">
+      <span  class="sr-only">Loading...</span>
+    </div>
+    <div></div>
+    <button class="btn btn1" (click)="cargarMas()"
+    style="padding: 10px; width: 80%; float: right; border-radius: 10px;" 
+    >Cargar Mas...</button>
+
+  

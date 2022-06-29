@@ -1,0 +1,361 @@
+
+.apuntar{
+    cursor: pointer;
+  }
+  
+.btn1{
+    width: 100%;
+    background: #ff6600ec;
+    color: white;
+    transition: 0.3s;
+    padding: 0px;
+    border-radius: 0px;
+  }
+  .btn1:hover{
+    background: #000;
+  }
+  
+  .footspace{
+      margin-bottom: 50px;
+  }
+
+  .cantidad{
+      color: white;
+      padding: 3px;
+      border-radius: 10px;
+      font-size: 12px;
+  }
+  /*buscarPD*/
+  .buscarPD{
+    justify-content: center;
+      
+  }
+  .selec{
+      height: 37.5px;
+      border: 1px solid rgb(223, 220, 220);
+      border-radius: 6px;
+
+  }
+  .buscarPD select:first-of-type{
+    float: left;
+  }
+
+  .buscarPD input:first-of-type{
+    float: left;
+     
+  }
+  .buscarPD input:last-child{
+     margin-left: 10px;
+     float: left;
+     
+  }
+  .largo{
+      width: 250px;
+  }
+  
+/*Menu Izquierdo*/
+.menu-left{
+    border: 0px solid grey;
+    float: left;
+    width: 17%;
+    height: 100%;
+    margin: 0px 40px 0px 0px;
+    padding: 10px;
+}
+
+.text-head h5{
+    margin: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.text-body{
+    margin-top: 10px;
+}
+.text-body ul li{
+    text-decoration: none;
+}
+.text-body ul li{
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+.text-body ul li a{
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    margin: 5px;
+    color: black;
+}
+
+.text-body ul li a:hover{
+  color: rgba(58, 57, 57, 0.753);
+}
+
+.btn2-minymax{
+    width: 95%;
+}
+
+.btn2-minymax:hover{
+    border:1px solid grey;
+}
+
+.btn2{
+    background-color: #ff6600ec;
+    padding: 2px 10px;
+    color: white;
+    margin-left: 3px;
+
+}
+
+.btn2:hover{
+    background-color: rgba(0, 0, 0, 0.692);
+}
+
+@media screen and (max-width: 991px){
+
+    .menu-left{
+        border: 0px solid grey;
+        float: none;
+        width: 90%;
+        height: 100%;
+        margin: 33px 0px 30px 0px;
+        padding: 15px;
+        display: none;
+    }
+}
+
+
+
+
+
+
+/* Utility stylings */
+
+
+img{
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    display: block;
+    border-radius: 5px;
+}
+
+
+.md-title,
+.sm-title{
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+}
+.lg-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.9;
+    
+}
+.md-title{
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+.sm-title{
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: capitalize;
+
+}
+.text-ligh{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* product section */
+
+
+.product{
+ 
+    width: 240px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    position: relative;
+    
+}
+
+.product-content{
+    width: 100%;
+    cursor: pointer;
+}
+
+.product-btns{
+    display: flex;
+    justify-content: center;
+}
+
+.product-info{
+    width: 85%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 8px;
+}
+.product-info-top{  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.rating span{
+    color: #ff6600ec;
+}
+.product-name{
+    color: black;
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform:capitalize;
+    font-weight: bold;
+}
+.product-price{
+    padding-top: 0.6rem;
+    padding-right: 0.6rem;
+    display: inline-block;
+}
+
+.product-img img, .product, .product-btns {
+    transition: transform 0.6s ease;
+}
+
+
+/*descuento*/
+
+
+
+.product-price:last-of-type{
+    color: #ff6600ec;
+}
+/*
+.product:hover .product-btns{
+    opacity: 1;
+}*/
+.off-info .sm-title{
+    background: #ff6600ec;
+    color: white;
+    display: inline-block;
+    padding: 0.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    z-index: 1;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Media Queries */
+@media only screen and (max-width: 990px){
+  .product{
+    width: 250px;
+    margin: auto;
+    }
+    
+    
+    .depart{
+        display: none;
+    }
+ 
+}
+
+
+.cantidad{
+    margin: 5px;
+}
+
+
+
+
+/* Media Queries */
+@media screen and (min-width: 652px){
+    .product-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      
+    }
+    .product{
+        margin: 9px;
+    }
+    .product-col-r-bottom{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 800px){
+    .product-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      
+    }
+    .product{
+        margin: 9px;
+    }
+    .product-col-r-bottom{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1100px){
+    .product-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .product{
+        margin: 9px;
+    }
+    .products .text-light{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1336px){
+    .product-items{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .product{
+        margin: 9px;
+    }
+    .flex{
+        height: 60vh;
+    }
+    
+}
+
+
+
+/*fufufufufyufyuf*/
+
+
+.deparmens{
+    width: 68%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+

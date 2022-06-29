@@ -1,0 +1,63 @@
+
+<div class="container">
+  
+  <div style="margin: 30px 0px 70px 0px;">
+    <div class="product-items">
+
+      <!-- single product -->
+
+      <div *ngFor="let producto of productos; index as i">
+        
+        <div class="product" *ngIf="producto.descuento > 0">
+
+          <div class="product-content">
+            <div class="product-img">
+              <img src="{{producto.img}}" alt="product image">
+            </div>
+          </div>
+
+          <div class="product-info">
+
+            <h2 class="sm-title depart">codigo: {{producto.codigo}}</h2>
+
+            <div class="product-info-top">
+
+              <div class="productname">
+                <p class="product-name">{{producto.producto}}</p>
+              </div>
+              <small class="cantidad bg-success" *ngIf="producto.existencia > 0 ">{{disponible}}</small>
+              <small class="cantidad  bg-danger" *ngIf="producto.existencia < 0 ">{{noDisponible}}</small>
+            </div>
+
+            <p class="product-price">{{producto.precio | currency}}</p>
+            <p class="product-price" *ngIf="producto.descuento > 0">
+              {{producto.precio  * producto.descuento - producto.precio  | currency}}</p>
+
+
+            <div class="product-btns">
+              <a *ngIf="!isloggedInAdm && add !== i" [routerLink]="['/detalle/',producto.id]" type="button"
+                class="btn1 btn">
+                Leer Mas
+              </a>
+              <button *ngIf="!isloggedInAdm && add !== i" (click)="addToCart(i)" type="button" class="btn1 btn">Añadir
+                <span><i class="fas fa-plus"></i></span>
+              </button>
+              <div *ngIf="add === i">
+                <input type="number" class="form-control" placeholder="Cantidad" #cantidad>
+                <a (click)="buy(cantidad.value)" *ngIf="!isloggedInAdm" type="button" class="btn1 btn">Carrito
+                  <span><i class="fas fa-shopping-cart"></i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div *ngIf="producto.descuento > 0" class="off-info">
+            <h2 class="sm-title"> {{producto.descuento * 100}}% off</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
